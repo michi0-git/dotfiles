@@ -1,0 +1,37 @@
+# focus app
+alt - 1 : open -a "Google Chrome"
+alt - 2 : open -a "Visual Studio Code"
+alt - 3 : open -a "Slack"
+alt - 4 : open -a "Claude"
+alt - 5 : open -a "iTerm"
+
+# focus window in specified direction
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# swap window position with neighbor
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
+
+# rotate tree
+alt - r : yabai -m space --rotate 90
+
+# toggle window zoom (Fullscreen)
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# toggle window native fullscreen
+shift + alt - f : yabai -m window --toggle native-fullscreen
+
+# Toggle floating mode for focused window
+shift + alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# Toggle split direction (Vertical / Horizontal)
+alt - e : yabai -m window --toggle split
+
+# Balance size of all windows in current space
+alt - 0 : yabai -m space --balance
+
