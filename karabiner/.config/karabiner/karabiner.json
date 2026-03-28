@@ -1,0 +1,35 @@
+{
+    "profiles": [
+        {
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" },
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Command+H を Control+H に変換",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "mandatory": ["left_command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "h",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    { "key_code": "vk_none" }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+
+        }
+    ]
+}
