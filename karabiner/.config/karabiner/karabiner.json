@@ -1,16 +1,37 @@
 {
     "profiles": [
         {
-            "name": "Default profile",
-            "selected": true,
-            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" },
             "complex_modifications": {
                 "rules": [
+                    {
+                        "description": "［ US ］左右のコマンドキー（⌘）を、単独で押したときは 英数・かな キー として扱う（左⌘は 英数、右⌘は かな）",
+                        "manipulators": [
+                            {
+                                "description": " LEFT COMMAND → EISUU ",
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_command" }],
+                                "to_if_alone": [{ "key_code": "japanese_eisuu" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": " RIGHT COMMAND → KANA ",
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "right_command" }],
+                                "to_if_alone": [{ "key_code": "japanese_kana" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
                     {
                         "description": "Command+H を Control+H に変換",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": { "mandatory": ["left_command"] }
@@ -21,15 +42,34 @@
                                         "modifiers": ["left_control"]
                                     }
                                 ],
+                                "to_if_alone": [{ "key_code": "vk_none" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps LockをControl（長押し）兼 Escape（単押し）にする",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    { "key_code": "left_control" }
+                                ],
                                 "to_if_alone": [
-                                    { "key_code": "vk_none" }
+                                    { "key_code": "escape" }
                                 ]
                             }
                         ]
                     }
                 ]
-            }
-
+            },
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]
 }
