@@ -29,3 +29,15 @@ if [ -f "/usr/local/share/powerlevel10k/powerlevel10k.zsh-theme" ]; then
     source "/usr/local/share/powerlevel10k/powerlevel10k.zsh-theme"
     [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 fi
+
+eval "$(mise activate zsh)"
+eval "$(starship init zsh)"
+
+alias cat='bat'
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
+
+# keep last rows
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
