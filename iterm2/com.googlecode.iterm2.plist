@@ -847,9 +847,9 @@
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
-			<false/>
+			<true/>
 			<key>Blur Radius</key>
-			<real>0.10000000000000001</real>
+			<real>5</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1601,7 +1601,7 @@
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Transparency</key>
-			<real>0.099999999999999992</real>
+			<real>0.050000000000000003</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
