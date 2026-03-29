@@ -32,8 +32,10 @@ fi
 
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 alias cat='bat'
+alias cd='z'
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 
