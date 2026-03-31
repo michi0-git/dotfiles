@@ -95,3 +95,9 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 alias cat='bat'
 alias cd='z'
 
+if command -v eza > /dev/null; then
+  alias ls='eza --icons --git'
+  alias ll='eza -al --icons --git --header'
+  alias lt='eza --tree --level=2 --icons'
+fi
+
