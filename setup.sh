@@ -14,7 +14,7 @@ else
     echo "⏭️  Brewfile not found. Skipping brew bundle."
 fi
 
-DOT_CONFIGS=(nvim karabiner zsh git starship)
+DOT_CONFIGS=(nvim karabiner zsh git)
 
 echo "🔗 Creating symbolic links..."
 for config in "${DOT_CONFIGS[@]}"; do
