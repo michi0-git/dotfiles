@@ -1,9 +1,13 @@
 # focus app
 alt - 1 : open -a "Google Chrome"
-alt - 2 : open -a "Visual Studio Code"
+alt - 2 : open -a "iTerm"
 alt - 3 : open -a "Slack"
 alt - 4 : open -a "Claude"
-alt - 5 : open -a "iTerm"
+alt - 5 : open -a "Visual Studio Code"
+# alt - 6
+alt - 7 : open -a "Notion"
+alt - 8 : open -a "Notes"
+alt - 9 : open -a "TradingView"
 
 # focus window in specified direction
 alt - h : yabai -m window --focus west
