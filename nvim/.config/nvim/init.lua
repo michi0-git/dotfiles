@@ -84,6 +84,4 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', { silent = true })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { silent = true })
 vim.keymap.set('n', '<leader>q', ':Bdelete<CR>', { silent = true })
 vim.keymap.set('n', '<leader>w', ':w<CR>', { silent = true })
-vim.keymap.set('i', '<Esc>', '<Nop>', { silent = true })
-vim.keymap.set('i', '<C-q>', '<Esc>', { silent = true })
 
