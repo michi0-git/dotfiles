@@ -101,3 +101,13 @@ if command -v eza > /dev/null; then
   alias lt='eza --tree --level=2 --icons'
 fi
 
+export PATH="$HOME/.local/bin:$PATH"
+
+
+. "$HOME/.local/bin/env"
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<
