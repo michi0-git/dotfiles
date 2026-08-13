@@ -6,7 +6,7 @@ alt - 4 : open -a "Claude"
 alt - 5 : open -a "Visual Studio Code"
 alt - 6 : open -a "Zalo"
 alt - 7 : open -a "Notion"
-alt - 8 : open -a "Notes"
+alt - 8 : open -a "TablePlus"
 alt - 9 : open -a "TradingView"
 
 # focus window in specified direction
