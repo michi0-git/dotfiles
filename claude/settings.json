@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gcloud run services describe *)",
+      "Bash(gcloud run services list *)",
+      "Bash(gcloud artifacts repositories list *)",
+      "Bash(docker --version)",
+      "Bash(firebase --version)"
+    ]
+  },
+  "sandbox": {
+    "mode": "auto-allow"
+  },
+  "model": "sonnet",
+  "enabledPlugins": {
+    "canary@canary": true,
+    "code-review@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "vercel@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "canary": {
+      "source": {
+        "source": "github",
+        "repo": "osauer/canary"
+      }
+    }
+  },
+  "language": "Japanese",
+  "effortLevel": "medium",
+  "tui": "fullscreen",
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "autoCompactEnabled": false,
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
+  "voiceEnabled": true
+}
