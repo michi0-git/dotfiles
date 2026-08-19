@@ -5,7 +5,7 @@ alt - 3 : open -a "Slack"
 alt - 4 : open -a "Claude"
 alt - 5 : open -a "Visual Studio Code"
 alt - 6 : open -a "Zalo"
-alt - 7 : open -a "Notion"
+alt - 7 : open -a "ChatGPT"
 alt - 8 : open -a "TablePlus"
 alt - 9 : open -a "TradingView"
 
