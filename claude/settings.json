@@ -6,10 +6,21 @@
       "Bash(gcloud artifacts repositories list *)",
       "Bash(docker --version)",
       "Bash(firebase --version)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.claude.json)"
+    ],
+    "ask": [
+      "Bash(curl:*)",
+      "Bash(wget:*)"
     ]
-  },
-  "sandbox": {
-    "mode": "auto-allow"
   },
   "model": "sonnet",
   "enabledPlugins": {
@@ -29,6 +40,9 @@
     }
   },
   "language": "Japanese",
+  "sandbox": {
+    "mode": "ask"
+  },
   "effortLevel": "medium",
   "tui": "fullscreen",
   "voice": {
@@ -38,5 +52,18 @@
   "autoCompactEnabled": false,
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
-  "voiceEnabled": true
+  "hooks": {
+    "SessionStart":[
+      {
+        "matcher": "*",
+        "hooks":[
+          {
+            "type": "command",
+            "command": "bash \"$HOME/.claude/hooks/herdr-agent-state.sh\" session",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
 }

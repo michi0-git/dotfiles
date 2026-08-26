@@ -1,12 +1,13 @@
 # focus app
+alt - 0 : open -a "Finder"
 alt - 1 : open -a "Google Chrome"
 alt - 2 : open -a "iTerm"
 alt - 3 : open -a "Slack"
-alt - 4 : open -a "Claude"
-alt - 5 : open -a "Visual Studio Code"
-alt - 6 : open -a "Zalo"
-alt - 7 : open -a "ChatGPT"
-alt - 8 : open -a "TablePlus"
+alt - 4 : open -a "Visual Studio Code"
+alt - 5 : open -a "Claude"
+alt - 6 : open -a "ChatGPT"
+alt - 7 : open -a "NordVPN"
+alt - 8 : open -a "System Settings"
 alt - 9 : open -a "TradingView"
 
 # focus window in specified direction
@@ -37,5 +38,5 @@ shift + alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
 alt - e : yabai -m window --toggle split
 
 # Balance size of all windows in current space
-alt - 0 : yabai -m space --balance
+shift + alt - 0 : yabai -m space --balance
 
