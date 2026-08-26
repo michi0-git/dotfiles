@@ -5,7 +5,9 @@
       "Bash(gcloud run services list *)",
       "Bash(gcloud artifacts repositories list *)",
       "Bash(docker --version)",
-      "Bash(firebase --version)"
+      "Bash(firebase --version)",
+      "Bash(curl:*)",
+      "Bash(wget:*)"
     ],
     "deny": [
       "Read(./.env)",
@@ -15,11 +17,11 @@
       "Read(**/*.key)",
       "Read(~/.ssh/**)",
       "Read(~/.aws/**)",
-      "Read(~/.claude.json)"
-    ],
-    "ask": [
-      "Bash(curl:*)",
-      "Bash(wget:*)"
+      "Read(~/.claude.json)",
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)",
+      "Bash(git push --force:*)",
+      "Bash(git reset --hard:*)"
     ]
   },
   "model": "sonnet",
