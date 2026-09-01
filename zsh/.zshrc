@@ -11,13 +11,12 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # =============================================================================
 # PATH
 # =============================================================================
-export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:$HOME/.docker/bin:/usr/local/go/bin"
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 
-export PATH="$PATH:Develop/infra/script/assumerole"
+export PATH="$PATH:$HOME/Develop/infra/script/assumerole"
 
 # =============================================================================
 # Build Flags
@@ -52,6 +51,11 @@ zinit light zsh-users/zsh-completions
 # =============================================================================
 source "$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+# <<< grok installer <<<
 
 # =============================================================================
 # Completions
@@ -103,11 +107,7 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 
-. "$HOME/.local/bin/env"
-
-# >>> grok installer >>>
-export PATH="$HOME/.grok/bin:$PATH"
-fpath=(~/.grok/completions/zsh $fpath)
-# <<< grok installer <<<
-
+# OpenVPN
+export PATH="/opt/homebrew/opt/openvpn/sbin:$PATH"

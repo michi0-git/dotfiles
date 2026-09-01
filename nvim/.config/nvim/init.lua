@@ -72,9 +72,6 @@ require("lazy").setup({
 })
 
 vim.cmd.colorscheme "catppuccin"
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { silent = true })
 vim.keymap.set('n', '<leader>t', ':botright spl | resize 12 | terminal<CR>i', { silent = true })    -- space + t
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })  -- space + e
@@ -82,6 +79,6 @@ vim.keymap.set('n', '<C-h>', '<C-w>h', { silent = true })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { silent = true })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { silent = true })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { silent = true })
-vim.keymap.set('n', '<leader>q', ':Bdelete<CR>', { silent = true })
+vim.keymap.set('n', '<leader>q', ':bdelete<CR>', { silent = true })
 vim.keymap.set('n', '<leader>w', ':w<CR>', { silent = true })
 

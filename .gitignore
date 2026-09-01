@@ -2,4 +2,5 @@
 *.swp
 claude/settings.local.json
 claude/.credentials.json
+Brewfile.lock.json
 

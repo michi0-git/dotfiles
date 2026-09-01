@@ -4,8 +4,8 @@ alt - 1 : open -a "Google Chrome"
 alt - 2 : open -a "iTerm"
 alt - 3 : open -a "Slack"
 alt - 4 : open -a "Visual Studio Code"
-alt - 5 : open -a "Claude"
-alt - 6 : open -a "ChatGPT"
+# alt - 5 : open -a "Claude"
+# alt - 6 : open -a "ChatGPT"
 alt - 7 : open -a "NordVPN"
 alt - 8 : open -a "System Settings"
 alt - 9 : open -a "TradingView"
@@ -32,7 +32,7 @@ alt - f : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # Toggle floating mode for focused window
-shift + alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
+shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # Toggle split direction (Vertical / Horizontal)
 alt - e : yabai -m window --toggle split
@@ -40,3 +40,7 @@ alt - e : yabai -m window --toggle split
 # Balance size of all windows in current space
 shift + alt - 0 : yabai -m space --balance
 
+
+# NordVPN (Tokyo 接続 / 切断)
+alt - v : ~/.local/bin/vpn on
+shift + alt - v : ~/.local/bin/vpn off

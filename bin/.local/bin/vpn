@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# NordVPN 接続/切断ショートカット (macOS deep link 経由)
+set -euo pipefail
+
+APP="NordVPN"
+COUNTRY="${VPN_COUNTRY:-Japan}"
+CITY="${VPN_CITY:-Tokyo}"
+
+notify() {
+  osascript -e "display notification \"$2\" with title \"NordVPN\"" >/dev/null 2>&1 || true
+  echo "$1"
+}
+
+ensure_app() {
+  pgrep -qx "$APP" || { open -g -a "$APP"; sleep 3; }
+}
+
+case "${1:-}" in
+  on|connect|tokyo)
+    ensure_app
+    open -g "nordvpn://connect?country=${COUNTRY}&city=${CITY}"
+    notify "→ ${CITY}, ${COUNTRY} に接続中..." "接続中: ${CITY}, ${COUNTRY}"
+    ;;
+  off|disconnect)
+    ensure_app
+    open -g "nordvpn://disconnect"
+    notify "→ 切断中..." "切断しました"
+    ;;
+  status)
+    if scutil --nc list | grep -qE '^\* \(Connected\)'; then
+      scutil --nc list | grep -E '^\* \(Connected\)'
+    else
+      echo "VPN: 未接続"
+    fi
+    ;;
+  *)
+    echo "usage: vpn {on|off|status}"
+    echo "  on     ${CITY}, ${COUNTRY} に接続 (VPN_CITY / VPN_COUNTRY で変更可)"
+    echo "  off    切断"
+    echo "  status 接続状態を表示"
+    exit 1
+    ;;
+esac
