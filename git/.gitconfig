@@ -1,3 +1,9 @@
 [user]
 	name = michi0-git
 	email = 209760957+michi0-git@users.noreply.github.com
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
