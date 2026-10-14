@@ -1,5 +1,5 @@
 # focus app
-alt - 0 : open -a "Finder"
+alt - 0 : open -a "TradingView"
 alt - 1 : open -a "Google Chrome"
 alt - 2 : open -a "iTerm"
 alt - 3 : open -a "Slack"
@@ -8,7 +8,7 @@ alt - 4 : open -a "Visual Studio Code"
 # alt - 6 : open -a "ChatGPT"
 alt - 7 : open -a "NordVPN"
 alt - 8 : open -a "System Settings"
-alt - 9 : open -a "TradingView"
+alt - 9 : open -a "Finder"
 
 # focus window in specified direction
 alt - h : yabai -m window --focus west

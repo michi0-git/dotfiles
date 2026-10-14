@@ -111,3 +111,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # OpenVPN
 export PATH="/opt/homebrew/opt/openvpn/sbin:$PATH"
+
+# Rust
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
