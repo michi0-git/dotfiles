@@ -18,6 +18,22 @@ else
     echo "⏭️  Brewfile not found. Skipping brew bundle."
 fi
 
+# rustup is keg-only in Homebrew, so it is not on PATH until .zprofile is loaded
+RUSTUP_BIN="$(brew --prefix rustup)/bin/rustup"
+if [ ! -x "$RUSTUP_BIN" ]; then
+    RUSTUP_BIN="$(command -v rustup || true)"
+fi
+
+if [ -z "$RUSTUP_BIN" ]; then
+    echo "⏭️  rustup not found. Skipping Rust toolchain setup."
+elif [[ "$("$RUSTUP_BIN" toolchain list 2>&1)" == *"no installed toolchains"* ]]; then
+    echo "🦀 Installing Rust stable toolchain..."
+    "$RUSTUP_BIN" default stable \
+        || echo "⚠️  Failed to install Rust stable toolchain."
+else
+    echo "⏭️  Rust toolchain already installed. Skipping."
+fi
+
 if ! command -v stow &> /dev/null; then
     echo "❌ stow not found even after brew bundle. Aborting symlink step."
     exit 1
