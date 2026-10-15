@@ -23,7 +23,10 @@ if ! command -v stow &> /dev/null; then
     exit 1
 fi
 
-DOT_CONFIGS=(nvim karabiner zsh git skhd yabai bin)
+DOT_CONFIGS=(nvim karabiner zsh git skhd yabai bin vscode)
+
+# Create the VS Code user dir beforehand so stow links files, not the whole Code dir
+mkdir -p "$HOME/Library/Application Support/Code/User"
 
 echo "🔗 Creating symbolic links..."
 for config in "${DOT_CONFIGS[@]}"; do
@@ -40,5 +43,17 @@ for config in "${DOT_CONFIGS[@]}"; do
         echo "⏭️  Directory '$config' not found. Skipping."
     fi
 done
+
+VSCODE_EXTENSIONS_FILE="$DOTFILES_DIR/vscode/extensions.txt"
+if command -v code &> /dev/null && [ -f "$VSCODE_EXTENSIONS_FILE" ]; then
+    echo "🧩 Installing VS Code extensions..."
+    while IFS= read -r extension || [ -n "$extension" ]; do
+        [[ -z "$extension" || "$extension" == \#* ]] && continue
+        code --install-extension "$extension" --force < /dev/null > /dev/null \
+            || echo "⚠️  Failed to install VS Code extension: $extension"
+    done < "$VSCODE_EXTENSIONS_FILE"
+else
+    echo "⏭️  code command or extensions.txt not found. Skipping VS Code extensions."
+fi
 
 echo "✅ Setup process finished! Please restart your terminal."

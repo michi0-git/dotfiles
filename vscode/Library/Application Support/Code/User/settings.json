@@ -1,0 +1,29 @@
+{
+    "workbench.colorTheme": "Dark+",
+    "[rust]": {
+        "editor.formatOnSave": true,
+    },
+    "rust-analyzer.cargo.allFeatures": true,
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "rust-analyzer.checkOnSave.extraArgs": [
+        "--",
+        "-A",
+        "clippy::needless_return"
+    ],
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "[terraform]": {
+        "editor.autoIndent": "full",
+        "editor.formatOnSave": true
+    },
+    "lldb.suppressUpdateNotifications": true,
+    "workbench.editor.empty.hint": "hidden"
+}
