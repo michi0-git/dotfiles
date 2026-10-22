@@ -1,3 +1,7 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/michiokuramochi/.docker/bin"
+# End of Docker Desktop section.
+
 # =============================================================================
 # .zprofile — Login shell environment setup
 # PATH, exports only. Aliases/functions belong in .zshrc.
