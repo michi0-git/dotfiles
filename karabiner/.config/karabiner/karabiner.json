@@ -42,9 +42,7 @@
                                         "modifiers": ["left_control"]
                                     }
                                 ],
-                                "to_if_alone": [
-                                    { "key_code": "vk_none" }
-                                ],
+                                "to_if_alone": [{ "key_code": "vk_none" }],
                                 "type": "basic"
                             }
                         ]
@@ -53,14 +51,12 @@
                         "description": "Caps LockをControl（長押し）兼 Escape（単押し）にする",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [
-                                    { "key_code": "left_control" }
-                                ]
+                                "to": [{ "key_code": "left_control" }],
+                                "type": "basic"
                             }
                         ]
                     }
