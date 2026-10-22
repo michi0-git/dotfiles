@@ -65,8 +65,11 @@ if command -v code &> /dev/null && [ -f "$VSCODE_EXTENSIONS_FILE" ]; then
     echo "🧩 Installing VS Code extensions..."
     while IFS= read -r extension || [ -n "$extension" ]; do
         [[ -z "$extension" || "$extension" == \#* ]] && continue
-        code --install-extension "$extension" --force < /dev/null > /dev/null \
-            || echo "⚠️  Failed to install VS Code extension: $extension"
+        # code CLI prints Node.js deprecation warnings to stderr; show them only on failure
+        if ! extension_log="$(code --install-extension "$extension" --force < /dev/null 2>&1)"; then
+            echo "⚠️  Failed to install VS Code extension: $extension"
+            echo "$extension_log"
+        fi
     done < "$VSCODE_EXTENSIONS_FILE"
 else
     echo "⏭️  code command or extensions.txt not found. Skipping VS Code extensions."
