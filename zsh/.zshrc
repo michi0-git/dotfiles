@@ -115,7 +115,7 @@ export PATH="/opt/homebrew/opt/openvpn/sbin:$PATH"
 # Rust
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/michiokuramochi/.docker/completions $fpath)
+fpath=("$HOME/.docker/completions" $fpath)
 autoload -Uz compinit
 (( ${+_comps[docker]} )) || compinit
 # End of Docker CLI completions
@@ -124,13 +124,10 @@ autoload -Uz compinit
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source /Users/michiokuramochi/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script
+[ -f "$HOME/.safe-chain/scripts/init-posix.sh" ] && source "$HOME/.safe-chain/scripts/init-posix.sh" # Safe-chain Zsh initialization script
 # safe-chain のスキャンは既定 10 秒でタイムアウトし、npx が実行前に失敗するため延ばす
 export AIKIDO_SCAN_TIMEOUT_MS=60000
 
 # bun completions
-[ -s "/Users/michiokuramochi/.bun/_bun" ] && source "/Users/michiokuramochi/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
