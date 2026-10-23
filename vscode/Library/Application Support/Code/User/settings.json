@@ -3,6 +3,9 @@
     "[rust]": {
         "editor.formatOnSave": true,
     },
+    "rust-analyzer.cargo.extraEnv": {
+        "OPENSSL_DIR": "/opt/homebrew/opt/openssl@3"
+    },
     "rust-analyzer.cargo.allFeatures": true,
     "rust-analyzer.checkOnSave.command": "clippy",
     "rust-analyzer.checkOnSave.extraArgs": [
