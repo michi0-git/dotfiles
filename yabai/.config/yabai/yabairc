@@ -29,7 +29,7 @@ yabai -m config left_padding                 6
 yabai -m config right_padding                6
 yabai -m config window_gap                   06
 
-yabai -m rule --add app="^iTerm2$" manage=off
+# yabai -m rule --add app="^iTerm2$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^iPhone Mirroring$" manage=off
 yabai -m rule --add app="^QuickTime Player" manage=off
