@@ -19,13 +19,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PATH:$HOME/Develop/infra/script/assumerole"
 
 # =============================================================================
-# Build Flags
-# =============================================================================
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include"
-export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig:/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
-
-# =============================================================================
 # Plugin Manager (Zinit)
 # =============================================================================
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -131,3 +124,4 @@ export AIKIDO_SCAN_TIMEOUT_MS=60000
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
+path=(${path:#/usr/local/opt/fzf/bin})
