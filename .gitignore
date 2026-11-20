@@ -5,3 +5,6 @@ claude/.credentials.json
 Brewfile.lock.json
 
 karabiner/.config/karabiner/automatic_backups/
+
+# uv tool symlinks created in ~/.local/bin (stow-folded into dotfiles)
+bin/.local/bin/mlx_whisper

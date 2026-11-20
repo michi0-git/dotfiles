@@ -60,6 +60,15 @@ for config in "${DOT_CONFIGS[@]}"; do
     fi
 done
 
+# After stow: ~/.local/bin links into dotfiles, so run uv only once it is in place
+if command -v uv &> /dev/null; then
+    echo "🐍 Installing uv tools..."
+    uv tool install mlx-whisper \
+        || echo "⚠️  Failed to install uv tool: mlx-whisper"
+else
+    echo "⏭️  uv not found. Skipping uv tools."
+fi
+
 VSCODE_EXTENSIONS_FILE="$DOTFILES_DIR/vscode/extensions.txt"
 if command -v code &> /dev/null && [ -f "$VSCODE_EXTENSIONS_FILE" ]; then
     echo "🧩 Installing VS Code extensions..."
