@@ -61,8 +61,7 @@ autoload -U +X bashcompinit && bashcompinit
 # =============================================================================
 
 # pyenv
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
+eval "$(pyenv init --no-rehash - zsh)"
 
 # mise (runtime version manager)
 eval "$(mise activate zsh)"
@@ -125,3 +124,4 @@ export AIKIDO_SCAN_TIMEOUT_MS=60000
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 path=(${path:#/usr/local/opt/fzf/bin})
+
