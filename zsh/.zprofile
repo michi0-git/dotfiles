@@ -13,7 +13,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # pyenv (PATH setup for login shell)
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+eval "$(pyenv init --path --no-rehash)"
 
 # tfenv
 export PATH="$HOME/.tfenv/bin:$PATH"
