@@ -16,6 +16,7 @@
 - スキーマ変更、セキュリティ関連は Plan Mode で計画を出してから実行
 - 既存のコード規約・命名を優先する。勝手にスタイルを変えない
 - 依頼された範囲だけ変更する。ついでのリファクタはしない
+- ワークツリーは本人がOrcaで作る（`~/orca/workspaces/<repo>/<branch>`）。Claude CodeのEnterWorktree（`.claude/worktrees/`）は使わない。作業はそのワークツリーで起動したセッションで行う
 
 ## コード
 - 変数名は省略しない（usr → user）
